@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio visual design Ajeng Maharani Mutia, siswa Desain Komunikasi Visual.">
+  <title>Ajeng Maharani Mutia | Visual Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #000000;
+      --paper: #f4f4f2;
+      --white: #ffffff;
+      --line: #333333;
+      --muted: #9b9b9b;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--white); font-family: 'DM Sans', Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+    img { display: block; max-width: 100%; }
+    ::selection { background: var(--white); color: var(--ink); }
+
+    .site-header {
+      position: fixed; z-index: 10; top: 0; width: 100%; padding: 22px 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.22); background: rgba(0,0,0,.86); backdrop-filter: blur(12px);
+    }
+    .brand { font-size: 12px; font-weight: 900; letter-spacing: .18em; }
+    .brand span { color: var(--muted); font-weight: 500; }
+    .nav { display: flex; gap: 30px; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .nav a { position: relative; padding-bottom: 5px; }
+    .nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: var(--white); transition: width .3s var(--ease); }
+    .nav a:hover::after { width: 100%; }
+    .menu-toggle { display: none; border: 1px solid var(--white); background: transparent; width: 39px; height: 34px; cursor: pointer; }
+
+    .hero { min-height: 100vh; padding: 145px 5vw 55px; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(320px, .98fr); gap: 6vw; align-items: center; border-bottom: 1px solid var(--line); }
+    .eyebrow, .section-kicker { color: var(--muted); font-size: 11px; letter-spacing: .2em; font-weight: 700; text-transform: uppercase; }
+    h1 { margin: 20px 0 28px; max-width: 760px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(64px, 10.5vw, 160px); line-height: .84; letter-spacing: -.045em; font-weight: 600; }
+    h1 em { display: block; padding-left: .3em; font-weight: 600; }
+    .hero-copy { max-width: 410px; padding-left: 8px; border-left: 2px solid var(--white); color: #d5d5d5; font-size: 15px; line-height: 1.65; }
+    .hero-visual { position: relative; padding: 14px; border: 1px solid var(--line); }
+    .hero-visual::before { content: '01 / INTRO'; position: absolute; z-index: 1; top: -9px; left: 16px; padding: 0 8px; background: var(--ink); color: var(--muted); font-size: 10px; letter-spacing: .18em; }
+    .hero-visual img { width: 100%; aspect-ratio: 1.6 / 1; object-fit: cover; filter: grayscale(1) contrast(1.12); }
+    .hero-caption { display: flex; justify-content: space-between; padding-top: 12px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .scroll-note { position: absolute; bottom: 32px; left: 5vw; color: var(--muted); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; writing-mode: vertical-rl; }
+
+    section { padding: 120px 5vw; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-bottom: 22px; border-bottom: 1px solid var(--white); }
+    .section-heading h2 { margin: 10px 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 6vw, 92px); line-height: .9; font-weight: 600; letter-spacing: -.04em; }
+    .section-number { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--muted); }
+
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: center; }
+    .profile-frame { position: relative; border: 1px solid var(--line); padding: 15px; max-width: 390px; }
+    .profile-frame::after { content: 'AJM / 2008'; position: absolute; right: -1px; bottom: 15px; padding: 7px 10px; background: var(--white); color: var(--ink); font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+    .profile-frame img { width: 100%; aspect-ratio: 1 / 1.12; object-fit: cover; filter: grayscale(1) contrast(1.08); }
+    .about-copy { max-width: 700px; }
+    .about-copy .lead { margin: 0 0 35px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(24px, 3vw, 42px); line-height: 1.12; }
+    .data-list { margin: 0; border-top: 1px solid var(--line); }
+    .data-row { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .data-row dt { color: var(--muted); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .data-row dd { margin: 0; }
+    .statement { margin-top: 28px; color: #c7c7c7; font-size: 14px; line-height: 1.7; }
+
+    .work-section { background: var(--paper); color: var(--ink); }
+    .work-section .section-heading { border-color: var(--ink); }
+    .work-section .section-kicker, .work-section .section-number { color: #666; }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+    .project-card { display: flex; flex-direction: column; min-height: 570px; border: 1px solid var(--ink); background: var(--paper); transition: transform .45s var(--ease), background .45s var(--ease), color .45s var(--ease); }
+    .project-card:hover { transform: translateY(-10px); background: var(--ink); color: var(--white); }
+    .project-image { position: relative; overflow: hidden; margin: 12px; aspect-ratio: 1 / 1; background: #ddd; }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease), filter .45s ease; }
+    .project-card:hover .project-image img { transform: scale(1.04); filter: grayscale(.25); }
+    .project-meta { display: flex; justify-content: space-between; padding: 12px 24px 0; font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    .project-body { display: flex; flex: 1; flex-direction: column; padding: 16px 24px 24px; }
+    .project-body h3 { margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(27px, 3vw, 45px); line-height: .95; font-weight: 600; }
+    .project-body p { max-width: 520px; margin: 0; color: #555; font-size: 13px; line-height: 1.65; }
+    .project-card:hover .project-body p { color: #c7c7c7; }
+    .project-actions { display: flex; align-items: center; gap: 18px; margin-top: auto; padding-top: 24px; }
+    .project-link, .details-button { display: inline-flex; align-items: center; gap: 9px; padding: 11px 14px; border: 1px solid var(--ink); background: transparent; color: inherit; font-size: 10px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .3s, color .3s; }
+    .project-link:hover, .details-button:hover, .project-card:hover .project-link:hover { background: var(--white); color: var(--ink); }
+    .details-button { border: 0; padding-left: 0; padding-right: 0; }
+    .arrow { font-size: 18px; line-height: 0; }
+
+    .contact-section { padding-bottom: 70px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7vw; margin-top: 55px; }
+    .contact-title { margin: 0; max-width: 630px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(38px, 5.5vw, 78px); line-height: .95; font-weight: 600; }
+    .contact-list { border-top: 1px solid var(--line); }
+    .contact-item { display: flex; justify-content: space-between; gap: 15px; padding: 19px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .contact-item span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-item a { text-align: right; transition: color .25s; }
+    .contact-item a:hover { color: var(--muted); }
+    .contact-note { margin-top: 25px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .copy-email { margin-top: 15px; border: 1px solid var(--white); background: var(--white); color: var(--ink); padding: 12px 15px; font-size: 10px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+    .copy-email:hover { background: transparent; color: var(--white); }
+    footer { display: flex; justify-content: space-between; padding: 28px 5vw; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+
+    dialog { width: min(580px, calc(100% - 32px)); border: 1px solid var(--white); padding: 0; background: var(--ink); color: var(--white); }
+    dialog::backdrop { background: rgba(0,0,0,.8); backdrop-filter: blur(5px); }
+    .dialog-inner { padding: 30px; }
+    .dialog-top { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+    .dialog-top h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 35px; line-height: 1; }
+    .close-dialog { border: 1px solid var(--white); background: transparent; width: 34px; height: 34px; cursor: pointer; }
+    .dialog-content { padding-top: 22px; color: #d0d0d0; font-size: 14px; line-height: 1.7; }
+    .reveal { opacity: 0; transform: translateY(25px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 760px) {
+      .site-header { padding: 17px 6vw; }
+      .menu-toggle { display: block; font-size: 0; }
+      .menu-toggle::before { content: '☰'; font-size: 18px; }
+      .nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; gap: 0; padding: 10px 6vw 18px; border-bottom: 1px solid var(--line); background: var(--ink); }
+      .nav.open { display: flex; }
+      .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .hero { grid-template-columns: 1fr; gap: 45px; padding-top: 125px; padding-bottom: 80px; }
+      h1 { font-size: clamp(57px, 17vw, 110px); }
+      .scroll-note { display: none; }
+      section { padding: 82px 6vw; }
+      .section-heading { align-items: start; flex-direction: column; gap: 20px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .profile-frame { max-width: 100%; }
+      .projects { grid-template-columns: 1fr; }
+      .project-card { min-height: 0; }
+      .project-body { min-height: 235px; }
+      .data-row { grid-template-columns: 1fr; gap: 6px; }
+      footer { flex-direction: column; gap: 10px; padding: 25px 6vw; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">AJENG <span>/ VISUAL DESIGN</span></a>
+    <button class="menu-toggle" aria-label="Buka menu navigasi" aria-expanded="false"></button>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#about">Profile</a>
+      <a href="#work">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Portfolio / 2026/2027</div>
+        <h1>VISUAL <em>DESIGN</em></h1>
+        <p class="hero-copy">Bikin ide-ide jadi visual yang punya karakter, arah dan ciri khas sendiri. Welcome to Ajeng Maharani's space!</p>
+      </div>
+      <figure class="hero-visual reveal">
+        <img src="img/welcome.png" alt="Welcome to Ajeng Maharani Mutia's portfolio">
+        <figcaption class="hero-caption"><span>Selected direction</span><span>Scroll to explore ↓</span></figcaption>
+      </figure>
+      <div class="scroll-note">Keep looking / 01—04</div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="section-heading reveal"><div><div class="section-kicker">02 / The designer</div><h2>Profile</h2></div><div class="section-number">AJM—01</div></div>
+      <div class="about-grid" style="margin-top: 55px;">
+        <div class="profile-frame reveal"><img src="img/PROFILE%20PHOTO.jpeg" alt="Foto profil Ajeng Maharani Mutia"></div>
+        <div class="about-copy reveal">
+          <p class="lead">Bagi aku, desain yang keren bukan sekadar estetika, tapi juga cara menyampaikan, tetapi juga menyampaikan sesuatu dengan tepat.</p>
+          <dl class="data-list">
+            <div class="data-row"><dt>Nama</dt><dd>AJENG MAHARANI MUTIA</dd></div>
+            <div class="data-row"><dt>Tempat tanggal lahir</dt><dd>Gunungkidul, 02 Desember 2008</dd></div>
+            <div class="data-row"><dt>Alamat</dt><dd>Bogor 1, Playen, Playen, Gunungkidul</dd></div>
+            <div class="data-row"><dt>Jurusan</dt><dd>Desain Komunikasi Visual</dd></div>
+          </dl>
+          <p class="statement">Saya adalah siswa DKV yang tertarik pada tipografi, layout, dan eksplorasi visual untuk kebutuhan branding maupun media sosial. Setiap proyek menjadi kesempatan untuk mengasah kepekaan visual dan membangun komunikasi yang lebih berani.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work-section">
+      <div class="section-heading reveal"><div><div class="section-kicker">03 / Selected work</div><h2>Projects</h2></div><div class="section-number">02 CASES</div></div>
+      <div class="projects">
+        <article class="project-card reveal">
+          <div class="project-meta"><span>01 / Social media</span><span>2026/2027</span></div>
+          <div class="project-image"><img src="img/BANNER%20IG.png" alt="Banner promosi kopi Mieeccoffe"></div>
+          <div class="project-body"><h3>Banner Kopi</h3><p>Promosi Komersial Fiktif: Mieeccoffe Banner. Proyek desain grafis media sosial yang berfokus pada layouting, tipografi kuat, dan penggabungan elemen visual serta informasi produk secara harmonis.</p><div class="project-actions"><a class="project-link" href="https://github.com/miecha02/Portofolio-Ajeng-Maharani/issues/1" target="_blank" rel="noopener">View project <span class="arrow">↗</span></a><button class="details-button" data-project="coffee">Read case</button></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>02 / Editorial</span><span>2026/2027</span></div>
+          <div class="project-image"><img src="img/MAJALAH.png" alt="Cover majalah fashion Street Mode Attitude"></div>
+          <div class="project-body"><h3>Cover Majalah Fashion</h3><p>Fashion Editorial Cover: Street Mode Attitude. Studi kasus desain cover dengan gaya urban street, sinkronisasi produk dan konten, serta blok teks bold untuk tagline yang unapologetic.</p><div class="project-actions"><a class="project-link" href="https://github.com/miecha02/Portofolio-Ajeng-Maharani/issues/2" target="_blank" rel="noopener">View project <span class="arrow">↗</span></a><button class="details-button" data-project="fashion">Read case</button></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>03 / Commercial</span><span>2026/2027</span></div>
+          <div class="project-image"><img src="img/Usaha dagang pribadi atau ortu atau saudara.png" alt="Flyer jasa konstruksi"></div>
+          <div class="project-body"><h3>Flyer Jasa Konstruksi</h3><p>Construction Service Flyer: Perancangan media promosi digital berupa banner layanan jasa buruh bangunan dengan konsep desain modern dan profesional, berfokus pada kejelasan informasi layanan serta kemudahan akses kontak bagi calon pelanggan.</p><div class="project-actions"><a class="project-link" href="https://github.com/miecha02/Portofolio-Ajeng-Maharani/issues/3" target="_blank" rel="noopener">View project <span class="arrow">↗</span></a><button class="details-button" data-project="construction">Read case</button></div></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>04 / Advertising</span><span>2026/2027</span></div>
+          <div class="project-image"><img src="img/Flayer promo produk pizza.png" alt="Flyer Promo produk pizza"></div>
+          <div class="project-body"><h3>Flyer Promo Produk Pizza</h3><p>Promo Product Flyer: Perancangan media promosi digital berkonsep kuliner modern dengan permainan pola latar yang dinamis, penekanan tipografi yang kuat, serta informasi diskon menarik untuk menarik minat beli konsumen.</p><div class="project-actions"><a class="project-link" href="https://github.com/miecha02/Portofolio-Ajeng-Maharani/issues/4" target="_blank" rel="noopener">View project <span class="arrow">↗</span></a><button class="details-button" data-project="pizza">Read case</button></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-heading reveal"><div><div class="section-kicker">04 / Let’s talk</div><h2>Contact</h2></div><div class="section-number">OPEN TO WORK</div></div>
+      <div class="contact-grid">
+        <div class="reveal"><h3 class="contact-title">Punya brief? Yuk, kita eksekusi jadi sesuatu yang keren.</h3><p class="contact-note">Terbuka untuk kesempatan belajar, kolaborasi, dan proyek desain yang menantang. Hubungi saya melalui kanal berikut.</p></div>
+        <div class="reveal"><div class="contact-list"><div class="contact-item"><span>Whatsapp</span><a href="https://wa.me/6283145993977" target="_blank" rel="noopener">083145993977 ↗</a></div><div class="contact-item"><span>Instagram</span><a href="https://instagram.com/ajengmaharani_02" target="_blank" rel="noopener">@ajengmaharani_02 ↗</a></div><div class="contact-item"><span>Email</span><a href="mailto:ajengmaharani94@gmail.com">ajengmaharani94@gmail.com ↗</a></div></div><button class="copy-email" type="button">Copy email</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Ajeng Maharani Mutia</span><span>Designed with intent / 2026/2027</span></footer>
+
+  <dialog id="project-dialog"><div class="dialog-inner"><div class="dialog-top"><h3 id="dialog-title"></h3><button class="close-dialog" aria-label="Tutup detail">×</button></div><div class="dialog-content" id="dialog-content"></div></div></dialog>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+
+    const dialog = document.querySelector('#project-dialog');
+    const dialogTitle = document.querySelector('#dialog-title');
+    const dialogContent = document.querySelector('#dialog-content');
+    const cases = {
+      coffee: { title: 'Banner Kopi', content: 'Mieeccoffe menjadi latihan untuk membangun hierarki visual dalam bidang promosi. Fokus utama berada pada produk, lalu diperkuat oleh headline yang mudah dipindai, badge diskon, dan informasi pendukung yang tersusun rapi. Arah visualnya hangat, akrab, dan tetap memiliki kontras yang kuat.' },
+      fashion: { title: 'Cover Majalah Fashion', content: 'Street Mode Attitude mengeksplorasi pertemuan antara beauty editorial dan energi street style. Tipografi serif yang elegan dipertemukan dengan blok teks tegas dan aksen merah agar cover terasa ekspresif, berani, dan punya ritme visual yang jelas.' },
+      construction: { title: 'Flyer Jasa Konstruksi', content: 'Construction Service Flyer: Perancangan media promosi digital berupa banner layanan jasa buruh bangunan dengan konsep desain modern dan profesional, berfokus pada kejelasan informasi layanan serta kemudahan akses kontak bagi calon pelanggan.' },
+      pizza: { title: 'Flyer Promo Produk Pizza', content: 'Promo Product Pizza: Perancangan media promosi digital berkonsep kuliner modern dengan permainan pola latar yang dinamis, penekanan tipografi yang kuat, serta informasi diskon menarik untuk menarik minat beli konsumen.' }
+    };
+    document.querySelectorAll('.details-button').forEach(button => button.addEventListener('click', () => {
+      const selected = cases[button.dataset.project];
+      dialogTitle.textContent = selected.title;
+      dialogContent.textContent = selected.content;
+      dialog.showModal();
+    }));
+    document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+
+    const copyButton = document.querySelector('.copy-email');
+    copyButton.addEventListener('click', async () => {
+      await navigator.clipboard.writeText('ajengmaharani94@gmail.com');
+      copyButton.textContent = 'Email copied';
+      setTimeout(() => { copyButton.textContent = 'Copy email'; }, 1800);
+    });
+  </script>
+</body>
+</html>
